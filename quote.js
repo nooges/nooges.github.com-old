@@ -1,4 +1,4 @@
-function main()
+function printQuote()
 {
   var ticker = 'AAPL'
   var url = 'http://www.google.com/finance/info?infotype=infoquoteall&q=' + ticker + '&callback=?';
@@ -37,4 +37,4 @@ function quoteStr(last, change, time)
   return output
 }
 
-main();
+printQuote();
