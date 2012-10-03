@@ -23,16 +23,24 @@ function printQuote()
 
 function quoteStr(last, change, time)
 {
-  if (change.charAt(0) == '+')
-    fontColor = 'green'
-  else if (change.charAt(0) == '-')
-    fontColor = 'red'
-  else
-    fontColor = 'black'
+  switch (change.charAt(0))
+  {
+    case '+':
+      fontColor = 'green'
+      imgCode = '<img src="http://nooges.github.com/arrow-up.png"> '
+      break
+    case '-':
+      fontColor = 'red'
+      imgCode = '<img src="http://nooges.github.com/arrow-down.png"> '
+      break
+    default:
+      fontColor = 'black'
+      imgCode = ''
+  }
 
   percentChange = Math.round(10000*+change/+last)/100
-  output = last + " <b>Change:</b><font color=" + fontColor + "> "
-  output += change + " (" + percentChange + "%)</font>"
+  output = last + " <b>Change:</b><font color=" + fontColor + ">"
+  output += change + " " + imgCode + " (" + percentChange + "%)</font>"
   output += " (" + time + ")"
   return output
 }
