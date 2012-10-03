@@ -1,6 +1,6 @@
 function printQuote()
 {
-  var ticker = 'AAPL'
+  var ticker = 'AAPL';
   var url = 'http://www.google.com/finance/info?infotype=infoquoteall&q=' + ticker + '&callback=?';
   $.getJSON(url, function(data) { 
     var items = [];
