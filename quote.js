@@ -17,7 +17,7 @@ function printQuote()
       items.push(" <b>Volume/Average:</b> " + datum.vo + "/" + datum.avvo)
       items.push("</center></font></td></tr></table></center>");
     });
-    $("#content").html(items.join(""));
+    $("#stockquote").html(items.join(""));
   });
 }
 
