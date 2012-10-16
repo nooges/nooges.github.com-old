@@ -52,7 +52,7 @@ function printQuote(tickers)
       items.push("<div class='grid_3'>" + item.l + "<br><font size=1>" + item.ltt + "</font></div>");    // Last price & time
       items.push("<div class='grid_5'><font color=" + changeColor(item.c) + ">");  // Change color
       items.push(item.c + " (" + item.cp + "%)</font><br>");      // Change
-      items.push(item.lo + " - " + item.hi + "</div>");      // Range
+      items.push("<font size=1>" + item.lo + " - " + item.hi + "</font></div>");      // Range
       items.push("</fieldset>");
 
       if (item.hasOwnProperty("el"))
