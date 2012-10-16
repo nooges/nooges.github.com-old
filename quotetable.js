@@ -21,7 +21,8 @@ function changeColor(change)
 
 function writeHtml(items, extHours)
 {
-  var header = "<font size=3><center><table>";
+  var header = "";
+  header += "<font size=3><center><table>";
   header += "<tr><th></th>";
   header += "<th>Current</th>";
   header += "<th>Change</th>";
