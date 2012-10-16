@@ -48,8 +48,8 @@ function printQuote(tickers)
     $.each(data, function(key, item)
     {
       items.push("<fieldset class='container_12'>");
-      items.push("<div class='grid_4'>" + item.t + "<br>" + item.name + "</div>");    // Ticker symbol
-      items.push("<div class='grid_3'>" + item.l + "<br>" + item.ltt + "</div>");    // Last price & time
+      items.push("<div class='grid_4'>" + item.t + "<br><font size=1>" + item.name + "</font></div>");    // Ticker symbol
+      items.push("<div class='grid_3'>" + item.l + "<br><font size=1>" + item.ltt + "</font></div>");    // Last price & time
       items.push("<div class='grid_5'><font color=" + changeColor(item.c) + ">");  // Change color
       items.push(item.c + " (" + item.cp + "%)</font><br>");      // Change
       items.push(item.lo + " - " + item.hi + "</div>");      // Range
@@ -58,8 +58,8 @@ function printQuote(tickers)
       if (item.hasOwnProperty("el"))
       {
         items.push("<fieldset class='container_12'>");
-        items.push("<div class='grid_4'>(Extended Hours)</div>");    // Ticker symbol
-        items.push("<div class='grid_3'>" + item.el + "<br>" + item.elt + "</div>");    // Last price & time
+        items.push("<div class='grid_4'>&nbsp;</div>");    // Ticker symbol
+        items.push("<div class='grid_3'>" + item.el + "<br><font size=1>" + item.elt + "</font></div>");    // Last price & time
         items.push("<div class='grid_5'><font color=" + changeColor(item.ec) + ">");  // Change color
         items.push(item.ec + " (" + item.ecp + "%)</font><br>");      // Change
         items.push("</div>");      // Range
