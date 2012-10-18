@@ -73,7 +73,7 @@ function printQuote(tickers)
         items.push('<div class="ui-block-a" style="width:30%">&nbsp;</div>');    // Ticker symbol
         items.push('<div class="ui-block-b" style="width:25%">' + item.el + "<br><font size=1>" + item.elt + "</font></div>");    // Last price & time
         items.push('<div class="ui-block-c" style="width:45%"><font color=' + changeColor(item.ec) + ">");  // Change color
-        items.push(item.c + " (" + item.ecp + "%)</font><br>");      // Change
+        items.push(item.ec + " (" + item.ecp + "%)</font><br>");      // Change
         items.push("</div></li>");
       } 
         
