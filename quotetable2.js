@@ -40,6 +40,13 @@ function writeHtml(items, extHours)
   $("ul").listview("refresh");
 }
 
+function shortName(name)
+{
+  if (name.length > 10)
+    name = name.substring(0, 10) + '...';
+  return name;
+}
+
 function printQuote(tickers)
 {
   //var d = new Date();
@@ -53,7 +60,7 @@ function printQuote(tickers)
     $.each(data, function(key, item)
     {
       items.push('<li><a href="#"><div class="ui-grid-b">');
-      items.push('<div class="ui-block-a" style="width:30%">' + item.t + "<br><font size=1>" + item.name + "</font></div>");    // Ticker symbol
+      items.push('<div class="ui-block-a" style="width:30%">' + item.t + "<br><font size=1>" + shortName(item.name) + "</font></div>");    // Ticker symbol
       items.push('<div class="ui-block-b" style="width:25%">' + item.l + "<br><font size=1>" + item.ltt + "</font></div>");    // Last price & time
       items.push('<div class="ui-block-c" style="width:45%"><font color=' + changeColor(item.c) + ">");  // Change color
       items.push(item.c + " (" + item.cp + "%)</font><br>");      // Change
