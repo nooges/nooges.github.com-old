@@ -61,7 +61,7 @@ function printQuote(tickers)
     {
       items.push('<li><a href="#"><div class="ui-grid-b">');
       items.push('<div class="ui-block-a" style="width:30%">' + item.t + "<br><font size=1>" + shortName(item.name) + "</font></div>");    // Ticker symbol
-      items.push('<div class="ui-block-b" style="width:25%">' + item.l + "<br><font size=1>" + item.ltt + "</font></div>");    // Last price & time
+      items.push('<div class="ui-block-b" style="width:25%">' + item.l + "<br><font size=1>" + item.ltt.split(' ')[0] + "</font></div>");    // Last price & time
       items.push('<div class="ui-block-c" style="width:45%"><font color=' + changeColor(item.c) + ">");  // Change color
       items.push(item.c + " (" + item.cp + "%)</font><br>");      // Change
       items.push("<font size=1>" + item.lo + " - " + item.hi + "</font></div>");      // Range
@@ -71,7 +71,7 @@ function printQuote(tickers)
       {
         items.push('<li><div class="ui-grid-b">');
         items.push('<div class="ui-block-a" style="width:30%">&nbsp;</div>');    // Ticker symbol
-        items.push('<div class="ui-block-b" style="width:25%">' + item.el + "<br><font size=1>" + item.elt + "</font></div>");    // Last price & time
+        items.push('<div class="ui-block-b" style="width:25%">' + item.el + "<br><font size=1>" + item.elt.split(' ')[2] + "</font></div>");    // Last price & time
         items.push('<div class="ui-block-c" style="width:45%"><font color=' + changeColor(item.ec) + ">");  // Change color
         items.push(item.ec + " (" + item.ecp + "%)</font><br>");      // Change
         items.push("</div></li>");
