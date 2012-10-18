@@ -31,9 +31,15 @@ function writeHtml(items, extHours)
   header += "<th>Time</th>";
 
   var footer = "</table></center></font>";
-  header = "";
-  footer = "";
-  $("#stockquote").html(header + items.join("") + footer);
+  header = '<ul data-role="listview" data-inset="true">';
+  footer = '</ul>';
+  //header = '';
+  //footer = '';
+  $("ul").empty();
+  $("ul").append(items.join(""));
+  //$("#stockquote").html(header + items.join("") + footer);
+  //$("#stockquote").html('<ul data-role="listview"><li>test3</li><li>test4</li></ul>');
+  $("ul").listview("refresh");
 }
 
 function printQuote(tickers)
@@ -42,29 +48,31 @@ function printQuote(tickers)
   //var n = d.toTimeString();
   var url = 'http://www.google.com/finance/info?infotype=infoquoteall&q=' + tickers + '&callback=?';
   var items = [];
+  var quotes = [];
   var extHours = false;
   $.getJSON(url, function(data)
   {
     $.each(data, function(key, item)
     {
-      items.push("<fieldset class='container_12'>");
-      items.push("<div class='grid_4'>" + item.t + "<br><font size=1>" + item.name + "</font></div>");    // Ticker symbol
-      items.push("<div class='grid_3'>" + item.l + "<br><font size=1>" + item.ltt + "</font></div>");    // Last price & time
-      items.push("<div class='grid_5'><font color=" + changeColor(item.c) + ">");  // Change color
+      items.push('<li><a href="#"><div class="ui-grid-b">');
+      items.push('<div class="ui-block-a" style="width:30%">' + item.t + "<br><font size=1>" + item.name + "</font></div>");    // Ticker symbol
+      items.push('<div class="ui-block-b" style="width:25%">' + item.l + "<br><font size=1>" + item.ltt + "</font></div>");    // Last price & time
+      items.push('<div class="ui-block-c" style="width:45%"><font color=' + changeColor(item.c) + ">");  // Change color
       items.push(item.c + " (" + item.cp + "%)</font><br>");      // Change
       items.push("<font size=1>" + item.lo + " - " + item.hi + "</font></div>");      // Range
-      items.push("</fieldset>");
+      items.push("</div></a></li>");
 
       if (item.hasOwnProperty("el"))
       {
-        items.push("<fieldset class='container_12'>");
-        items.push("<div class='grid_4'>&nbsp;</div>");    // Ticker symbol
-        items.push("<div class='grid_3'>" + item.el + "<br><font size=1>" + item.elt + "</font></div>");    // Last price & time
-        items.push("<div class='grid_5'><font color=" + changeColor(item.ec) + ">");  // Change color
-        items.push(item.ec + " (" + item.ecp + "%)</font><br>");      // Change
-        items.push("</div>");      // Range
-        items.push("</fieldset>");
-      }
+        items.push('<li><div class="ui-grid-b">');
+        items.push('<div class="ui-block-a" style="width:30%">&nbsp;</div>');    // Ticker symbol
+        items.push('<div class="ui-block-b" style="width:25%">' + item.el + "<br><font size=1>" + item.elt + "</font></div>");    // Last price & time
+        items.push('<div class="ui-block-c" style="width:45%"><font color=' + changeColor(item.ec) + ">");  // Change color
+        items.push(item.c + " (" + item.ecp + "%)</font><br>");      // Change
+        items.push("</div></li>");
+      } 
+        
+        
       /*
       if (item.avvo === "")
       {
