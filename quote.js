@@ -15,11 +15,11 @@ switch (change.charAt(0))
     fontColor = 'black';
 }
 
-percentChange = Math.round(10000*+change/+last)/100;
-output = last + " <b>Change:</b> <font color=" + fontColor + ">";
-output += change + " (" + percentChange + "%)</font>";
-output += " (" + time + ")";
-return output;
+  percentChange = Math.round(10000*+change/+last)/100;
+  output = last + " <b>Change:</b> <font color=" + fontColor + ">";
+  output += change + " (" + percentChange + "%)</font>";
+  output += " (" + time + ")";
+  return output;
 }
     
 function printQuote()
@@ -44,11 +44,29 @@ function printQuote()
       items.push("<br><b>Range:</b> " + datum.lo + '-' + datum.hi);
       items.push(" <b>Volume/Average:</b> " + datum.vo + "/" + datum.avvo);
       //items.push("<br>" + n);
+    });
+    printVXAPL(items);
+  });
+  tid = setTimeout(printQuote, timeout);
+}
+
+function printVXAPL(items)
+{
+  var d = new Date();
+  var n = d.toTimeString();
+  var url = 'http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22%5EVXAPL%22)&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=?';
+  $.getJSON(url, function(data)
+  {
+    $.each(data.query.results, function(key, datum)
+    {
+      items.push("<br>");
+      output = quoteStr(datum.LastTradePriceOnly, datum.Change, datum.LastTradeTime);
+      items.push("<b>" + datum.symbol + "</b> " + output);
+      items.push(" <b>Range:</b> " + datum.DaysLow + '-' + datum.DaysHigh);
       items.push("</center></font></td></tr></table></center>");
     });
     $("#stockquote").html(items.join(""));
   });
-  tid = setTimeout(printQuote, timeout);
 }
 
 // To be called when you want to stop the timer
