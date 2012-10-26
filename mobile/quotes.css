@@ -1,0 +1,7 @@
+table,th,td { border: 1px solid;}
+a .ui-grid-b .ui-block-a, .ui-grid-b .ui-block-b, .ui-grid-b .ui-block-c {
+    white-space:pre-line;
+}
+.ui-grid-b .ui-block-a, .ui-grid-b .ui-block-b, .ui-grid-b .ui-block-c {
+    white-space:pre-line;
+}
