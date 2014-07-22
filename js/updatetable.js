@@ -89,7 +89,7 @@ function abortTimer()
 
 // Read in tickers from URL if specified
 var url = $.url();
-var tickers = url.param('stocks');
-if (tickers === undefined)
-  tickers = 'AAPL,GOOG,AMZN,UCO,SPY';
+var tickers = url.param('symbols');
+if ((tickers === undefined) || (tickers.length == 0))
+  tickers = 'AAPL,GOOG,AMZN,VXX,SPY';
 printQuote(tickers);
