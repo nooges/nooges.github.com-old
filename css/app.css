@@ -1,3 +1,7 @@
+body {
+  font-size: 17px;
+  line-height: 21px;
+}
 p {
   margin-top: 0;
   margin-bottom: 0px;
@@ -7,7 +11,7 @@ p {
 
 .table-view-cell {
   position: relative;
-  padding: 11px 0px 5px 15px;
+  padding: 3px 0px 0px 7px;
   overflow: hidden;
   border-bottom: 1px solid #ddd;
 }
