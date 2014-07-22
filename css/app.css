@@ -1,0 +1,13 @@
+p {
+  margin-top: 0;
+  margin-bottom: 0px;
+  font-size: 12px;
+  color: #777;
+}
+
+.table-view-cell {
+  position: relative;
+  padding: 11px 0px 5px 15px;
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+}

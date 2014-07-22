@@ -59,20 +59,20 @@ function printQuote(tickers)
   {
     $.each(data, function(key, item)
     {
-      items.push('<li class="table-view-cell"><table border=0 cellpadding=0><tr>');
-      items.push('<td width=30%>' + item.t + "<br><p>" + shortName(item.name) + "</p></td>");    // Ticker symbol
-      items.push('<td width=30%>' + item.l + "<br><p>" + item.ltt.split(' ')[0] + "</p></td>");    // Last price & time
-      items.push('<td width=30%><font color=' + changeColor(item.c) + ">");  // Change color
+      items.push('<li class="table-view-cell"><table width="100%"><tr>');
+      items.push('<td width="30%">' + item.t + "<br><p>" + shortName(item.name) + "</p></td>");    // Ticker symbol
+      items.push('<td width="25%">' + item.l + "<br><p>" + item.ltt.split(' ')[0] + "</p></td>");    // Last price & time
+      items.push('<td width="45%"><font color=' + changeColor(item.c) + ">");  // Change color
       items.push(item.c + " (" + item.cp + "%)</font><br>");      // Change
       items.push("<p>" + item.lo + " - " + item.hi + "</p></td>");      // Range
       items.push("</tr></table></li>");
 
       if (item.hasOwnProperty("el"))
       {
-        items.push('<li class="table-view-cell"><table border=0 cellpadding=0><tr>');
-        items.push('<td width=30%>&nbsp;</td>');    // Ticker symbol
-        items.push('<td width=30%>' + item.el + "<br><p>" + item.elt.split(' ')[2] + "</p></td>");    // Last price & time
-        items.push('<td width=30%><font color=' + changeColor(item.ec) + ">");  // Change color
+        items.push('<li class="table-view-cell"><table width="100%"><tr>');
+        items.push('<td width="30%">&nbsp;</td>');    // Ticker symbol
+        items.push('<td width="25%">' + item.el + "<br><p>" + item.elt.split(' ')[2] + "</p></td>");    // Last price & time
+        items.push('<td width="45%"><font color=' + changeColor(item.ec) + ">");  // Change color
         items.push(item.ec + " (" + item.ecp + "%)</font></td>");      // Change
         items.push("</tr></table></li>");
       } 
