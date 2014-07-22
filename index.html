@@ -1,34 +1,28 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>Stock Quotes</title>
-<meta name="viewport" content="width=device-width, initial-scale=1"> 
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
-<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
-<script src="quotetable2.js"></script>
-<style type="text/css">
-table,th,td { border: 1px solid;}
-a .ui-grid-b .ui-block-a, .ui-grid-b .ui-block-b, .ui-grid-b .ui-block-c {
-    white-space:pre-line;
-}
-.ui-grid-b .ui-block-a, .ui-grid-b .ui-block-b, .ui-grid-b .ui-block-c {
-    white-space:pre-line;
-}
-</style>
+  <title>Stock Quotes</title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="stylesheet" href="css/ratchet.min.css">
+  <script src="js/ratchet.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+  <script src="updatetable.js"></script>
+
 </head>
 <body>
-<div data-role="page">
+  <header class="bar bar-nav">
+    <!-- TODO: Have popup to edit stock tickers and switch to new link -->
+    <!-- <a class="icon icon-gear pull-right" href="#settingsModal"></a> -->
+    <h1 class="title">Stock Quotes</h1>
+  </header>
 
-  <div data-role="header">
-    <h1>Stock Quotes</h1>
-  </div><!-- /header -->
-
-  <div data-role="content">
-    <ul data-role="listview">
+  <div class="content">
+    <ul class="table-view">
       <div id="stockquote"></div>
     </ul>
   </div><!-- /content -->
 
-</div><!-- /page -->
 </body>
 </html>
