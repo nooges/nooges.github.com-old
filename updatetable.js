@@ -76,34 +76,6 @@ function printQuote(tickers)
         items.push(item.ec + " (" + item.ecp + "%)</font></td>");      // Change
         items.push("</tr></table></li>");
       } 
-        
-        
-      /*
-      if (item.avvo === "")
-      {
-        items.push("<td>" + item.vo + "</td>");    // Volume
-      }
-      else
-      {
-        items.push("<td>" + item.vo + "/" + item.avvo + "</td>");    // Volume
-      }
-      items.push("<td>" + item.lt + "</td>");                      // Last time
-      items.push("</tr>");
-
-      if (item.hasOwnProperty("el"))
-      {
-        extHours = true;
-        items.push("<tr>");
-        items.push("<td></td>");    // Ticker symbol
-        items.push("<td>" + item.el + "</td>");    // Last price
-        items.push("<td><font color=" + changeColor(item.ec) + ">");  // Change color
-        items.push(item.ec + " (" + item.ecp + "%)</font></td>");      // Change
-        items.push("<td></td>");      // Range
-        items.push("<td></td>");    // Volume
-        items.push("<td>" + item.elt + "</td>");                      // Last time
-        items.push("</tr>");
-      }
-      */
     });
     writeHtml(items, extHours);
   });
