@@ -37,7 +37,6 @@ function writeHtml(items, extHours)
   //footer = '';
   $("ul").empty();
   $("ul").append(items.join(""));
-  $("ul").listview("refresh");
 }
 
 function shortName(name)
@@ -88,4 +87,9 @@ function abortTimer()
   clearInterval(tid);
 }
 
-printQuote('AAPL,GOOG,AMZN,UCO,SPY');
+// Read in tickers from URL if specified
+var url = $.url();
+var tickers = url.param('stocks');
+if (tickers === undefined)
+  tickers = 'AAPL,GOOG,AMZN,UCO,SPY';
+printQuote(tickers);
